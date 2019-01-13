@@ -10,9 +10,8 @@ class App extends Component {
     render() {
         return (
             <div className="container">
-                <div className="row">
-                    <Navigation />
-                </div>
+                <Navigation />
+
                 <div className="row">
                     <FilterBar />
                     <LaptopList />

@@ -30,7 +30,7 @@ class LaptopList extends Component {
         ];
 
         return (
-            <ReactTable className="col-sm-4 col-md-3"
+            <ReactTable className="col-sm-8 col-md-9"
                 manual
                 data={ this.state.data }
                 pages={ this.state.pages }
