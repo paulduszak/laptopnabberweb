@@ -9,12 +9,13 @@ class App extends Component {
 
     render() {
         return (
-            <div className="container">
+            <div >
                 <Navigation />
-
-                <div className="row">
-                    <FilterBar />
-                    <LaptopList />
+                <div className="container">
+                    <div className="row">
+                        <FilterBar />
+                        <LaptopList />
+                    </div>
                 </div>
             </div>
         );

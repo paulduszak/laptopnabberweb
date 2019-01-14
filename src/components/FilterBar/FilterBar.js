@@ -5,7 +5,7 @@ import "./FilterBar.css";
 class FilterBar extends Component {
     render() {
         return (
-            <div className="filterbar col-sm-4 col-md-3">
+            <div className="filterbar col-md-3">
                 Hello
             </div>
         );

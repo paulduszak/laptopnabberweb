@@ -4,7 +4,7 @@ class Search extends Component {
 
     render = () => {
         return (
-            <input className="form-control form-control-dark col-md-6 float-left m-3" type="text" placeholder="Have something specific in mind? Search here..." aria-label="Search" />
+                <input className="col-md-6 float-left form-control m-3" type="text" placeholder="Have something specific in mind? Search here..." aria-label="Search" />
         );
     }
 
