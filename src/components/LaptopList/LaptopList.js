@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
+import './LaptopList.css';
 
 class LaptopList extends Component {
     state = {

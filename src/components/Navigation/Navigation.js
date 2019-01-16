@@ -10,7 +10,7 @@ class Navigation extends Component {
 
     render() {
         return (
-            <header className="shadow pt-2 pb-2">
+            <header className="shadow-sm pt-2 pb-2">
                 <div className="container">
                     <div className="row">
                         <img className="m-2 col-md-3 float-left" src={logo} alt="LaptopNabber" />

@@ -11,12 +11,14 @@ class App extends Component {
         return (
             <div >
                 <Navigation />
-                <div className="container">
-                    <div className="row">
-                        <FilterBar />
-                        <LaptopList />
+                <main>
+                    <div className="container">
+                        <div className="row">
+                            <FilterBar />
+                            <LaptopList />
+                        </div>
                     </div>
-                </div>
+                </main>
             </div>
         );
     }
