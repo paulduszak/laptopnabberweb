@@ -18,22 +18,23 @@ class FilterBar extends Component {
 
     render() {
         return (
-            <div className="filterbar col-md-3 p-3">
+            <div className="filterbar col-md-3 pt-2">
                 <div className="col-md-12">
                     <h6 className="title float-left">Laptop Filters</h6>
                     <a className="reset float-right">Reset all</a>
                 </div>
 
-
-                <div className="card-group col-md-12">
+                <div className="card-group col-md-12 p-0">
                     <Card>
-                        <CardTitle>
+                        <CardTitle className="m-0">
                             <h6 className="pt-2 pl-3 float-left">Price</h6>
-                            <Button color="link" className="float-right m-0" onClick={this.toggle} style={{ marginBottom: '1rem' }}>Toggle</Button>
+                            <Button color="link" className="float-right m-0" onClick={this.toggle} style={{ marginBottom: '1rem' }}>+</Button>
                         </CardTitle>
-                        <CardBody>
+                        <CardBody className="p-0">
                             <Collapse isOpen={this.state.collapse}>
-                                <input type="range" className="form-control-range" id="formControlRange" />
+                                <div className="p-3">
+                                    <input type="range" className="form-control-range" id="formControlRange" />
+                                </div>
                             </Collapse>
                         </CardBody>
                     </Card>
