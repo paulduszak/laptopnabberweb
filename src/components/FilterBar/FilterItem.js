@@ -16,7 +16,7 @@ class FilterItem extends Component {
 
     render() {
         return (
-            <Card className="col-md-12">
+            <Card className="col mt-2">
                 <CardTitle className="m-0">
                     <h6 className="pt-2 pl-3 float-left" onClick={this.toggle}>Price</h6>
                     <Button color="link" className="float-right m-0" onClick={this.toggle} style={{ marginBottom: '1rem' }}>+</Button>

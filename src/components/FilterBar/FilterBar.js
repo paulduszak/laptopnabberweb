@@ -20,9 +20,8 @@ class FilterBar extends Component {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="card-group col-md-12 p-2">
+                    <div className="col p-2">
                         <FilterItem/>
-                        <div className="w-100 mt-2"></div>
                         <FilterItem/>
                     </div>
                 </div>
