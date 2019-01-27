@@ -7,6 +7,23 @@ import FilterBar from '../FilterBar/FilterBar';
 
 class App extends Component {
 
+    state = {
+        filters : {
+            checkboxFilters: [
+                {
+                    title: "Brand",
+                    options: ["Dell", "Lenovo", "HP"],
+                    selected: []
+                },
+                {
+                    title: "Processor Brand",
+                    options: ["AMD", "Intel"],
+                    selected: []
+                }
+            ]
+        }
+    }
+
     render() {
         return (
             <div >
@@ -14,7 +31,7 @@ class App extends Component {
                 <main>
                     <div className="container">
                         <div className="row">
-                            <FilterBar />
+                            <FilterBar filters={this.state.filters} />
                             <LaptopList />
                         </div>
                     </div>

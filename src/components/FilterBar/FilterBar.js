@@ -7,22 +7,21 @@ class FilterBar extends Component {
 
     render() {
         return (
-            <div className="filterbar col-sm-3 pt-2">
+            <div className="filterbar col pt-2">
                 <div className="row">
-                    <div className="col-sm-12">
+                    <div className="col">
                         <h6 className="title m-0 float-left">Laptop Filters</h6>
                         <a className="reset float-right">Reset all</a>
                     </div>
                 </div>
                 <div className="row">
-                    <div className="results col-md-12 mb-2">
+                    <div className="results col mb-2">
                         687 Results
                     </div>
                 </div>
                 <div className="row">
                     <div className="col p-2">
-                        <FilterItem/>
-                        <FilterItem/>
+                        {this.props.filters.checkboxFilters.map(filter => <FilterItem title={filter.title} options={filter.options} selected={filter.selected} />)}
                     </div>
                 </div>
             </div>
