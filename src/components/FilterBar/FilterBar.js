@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import FilterItem from "./FilterItem";
+import CheckboxFilter from "./CheckboxFilter";
 
 import "./FilterBar.css";
 
@@ -21,7 +21,7 @@ class FilterBar extends Component {
                 </div>
                 <div className="row">
                     <div className="col p-2">
-                        {this.props.filters.checkboxFilters.map(filter => <FilterItem title={filter.title} options={filter.options} selected={filter.selected} />)}
+                        {this.props.filters.checkboxFilters.map(filter => <CheckboxFilter title={filter.title} options={filter.options} selected={filter.selected} />)}
                     </div>
                 </div>
             </div>

@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import { Card, CardBody, CardTitle, Collapse, Button } from 'reactstrap';
 
-class FilterItem extends Component {
+import './CheckboxFilter.css';
+
+class CheckboxFilter extends Component {
 
     constructor(props) {
         super(props);
@@ -23,16 +25,18 @@ class FilterItem extends Component {
                 </CardTitle>
                 <CardBody className="p-0">
                     <Collapse isOpen={this.state.collapse}>
-                        <div className="p-3">
+                        <ul className="list-group checkbox-filter">
                             {this.props.options.map( option => (
-                                <div className="form-check">
-                                    <input className="form-check-input" type="checkbox" id="defaultCheck1" />
-                                        <label className="form-check-label" htmlFor="defaultCheck1">
-                                            {option}
+                                <li className="list-group-item">
+                                    <div className="checkbox">
+                                        <label >
+                                            <input type="checkbox"/>
+                                            <span className="default">{option}</span>
                                         </label>
-                                </div>
+                                    </div>
+                                </li>
                             ))}
-                        </div>
+                        </ul>
                     </Collapse>
                 </CardBody>
             </Card>
@@ -40,4 +44,4 @@ class FilterItem extends Component {
     }
 }
 
-export default FilterItem;
+export default CheckboxFilter;
