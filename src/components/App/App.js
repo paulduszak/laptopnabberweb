@@ -24,16 +24,18 @@ class App extends Component {
         }
     }
 
+    handleClick = (checkboxName, checkboxState) => {
+        console.log(checkboxName + " " + checkboxState)
+    }
+
     render() {
         return (
             <div >
                 <Navigation />
-                <main>
-                    <div className="container">
-                        <div className="row">
-                            <FilterBar filters={this.state.filters} />
-                            <LaptopList />
-                        </div>
+                <main className="container">
+                    <div className="row">
+                        <FilterBar handleClick={this.handleClick} filters={this.state.filters} />
+                        <LaptopList />
                     </div>
                 </main>
             </div>

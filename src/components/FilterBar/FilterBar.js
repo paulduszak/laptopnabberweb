@@ -5,6 +5,10 @@ import "./FilterBar.css";
 
 class FilterBar extends Component {
 
+    handleClick = (checkboxName, checkboxState) => {
+        this.props.handleClick(checkboxName, checkboxState);
+    }
+
     render() {
         return (
             <div className="filterbar col pt-2">
@@ -21,7 +25,7 @@ class FilterBar extends Component {
                 </div>
                 <div className="row">
                     <div className="col p-2">
-                        {this.props.filters.checkboxFilters.map(filter => <CheckboxFilter title={filter.title} options={filter.options} selected={filter.selected} />)}
+                        {this.props.filters.checkboxFilters.map(filter => <CheckboxFilter title={filter.title} key={filter.title} handleClick={this.handleClick} options={filter.options} selected={filter.selected} />)}
                     </div>
                 </div>
             </div>
