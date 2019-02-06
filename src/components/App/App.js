@@ -8,24 +8,49 @@ import FilterBar from '../FilterBar/FilterBar';
 class App extends Component {
 
     state = {
-        filters : {
-            checkboxFilters: [
-                {
-                    title: "Brand",
-                    options: ["Dell", "Lenovo", "HP"],
-                    selected: []
-                },
-                {
-                    title: "Processor Brand",
-                    options: ["AMD", "Intel"],
-                    selected: []
-                }
-            ]
-        }
+        checkboxFilters: [
+            {
+                title: "Brand",
+                options: [
+                    {
+                        name: "Dell",
+                        checked: true
+                    },
+                    {
+                        name: "Lenovo",
+                        checked: false
+                    },
+                    {
+                        name: "HP",
+                        checked: false
+                    }
+                ]
+            },
+            {
+                title: "Processor Brand",
+                options: [
+                    {
+                        name: "AMD",
+                        checked: false
+                    },
+                    {
+                        name: "Intel",
+                        checked: false
+                    }
+                ]
+            }
+        ]
     }
 
-    handleClick = (checkboxName, checkboxState) => {
-        console.log(checkboxName + " " + checkboxState)
+    handleClick = (filterName, checkboxName, checkboxState) => {
+        this.setState(prevState => {
+            let nextState = {...prevState};
+            nextState.checkboxFilters
+                .find(filter => filter.title === filterName).options
+                .find(option => option.name === checkboxName).checked = checkboxState;
+
+            return nextState;
+        });
     }
 
     render() {
@@ -34,7 +59,7 @@ class App extends Component {
                 <Navigation />
                 <main className="container">
                     <div className="row">
-                        <FilterBar handleClick={this.handleClick} filters={this.state.filters} />
+                        <FilterBar handleClick={this.handleClick} filters={this.state.checkboxFilters} />
                         <LaptopList />
                     </div>
                 </main>

@@ -5,8 +5,8 @@ import "./FilterBar.css";
 
 class FilterBar extends Component {
 
-    handleClick = (checkboxName, checkboxState) => {
-        this.props.handleClick(checkboxName, checkboxState);
+    handleClick = (filterName, checkboxName, checkboxState) => {
+        this.props.handleClick(filterName, checkboxName, checkboxState);
     }
 
     render() {
@@ -25,7 +25,14 @@ class FilterBar extends Component {
                 </div>
                 <div className="row">
                     <div className="col p-2">
-                        {this.props.filters.checkboxFilters.map(filter => <CheckboxFilter title={filter.title} key={filter.title} handleClick={this.handleClick} options={filter.options} selected={filter.selected} />)}
+                        {this.props.filters.map( filter =>
+                            <CheckboxFilter
+                                title={filter.title}
+                                handleClick={this.handleClick}
+                                key={filter.title}
+                                options={filter.options}
+                            />
+                        )}
                     </div>
                 </div>
             </div>

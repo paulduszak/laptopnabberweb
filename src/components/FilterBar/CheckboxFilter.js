@@ -15,11 +15,12 @@ class CheckboxFilter extends Component {
         this.setState({ collapse: !this.state.collapse });
     }
 
-    handleClick = (event) => {
+    handleClick = (event, title) => {
+        let filterName = title;
         let checkboxName = event.target.value;
         let checkboxState = this.refs[checkboxName].checked
 
-        this.props.handleClick(checkboxName, checkboxState);
+        this.props.handleClick(filterName, checkboxName, checkboxState);
     }
 
     render() {
@@ -33,11 +34,16 @@ class CheckboxFilter extends Component {
                     <Collapse isOpen={this.state.collapse}>
                         <ul className="list-group checkbox-filter">
                             {this.props.options.map( option => (
-                                <li className="list-group-item" key={option}>
+                                <li className="list-group-item" key={option.name}>
                                     <div className="checkbox">
                                         <label >
-                                            <input type="checkbox" name={option} ref={option} value={option} onClick={this.handleClick}/>
-                                            <span className="default">{option}</span>
+                                            <input type="checkbox"
+                                                   defaultChecked={option.checked}
+                                                   name={option.name}
+                                                   ref={option.name}
+                                                   value={option.name}
+                                                   onClick={(event) => this.handleClick(event, this.props.title)} />
+                                            <span className="default">{option.name}</span>
                                         </label>
                                     </div>
                                 </li>
